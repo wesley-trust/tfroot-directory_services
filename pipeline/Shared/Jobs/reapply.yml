@@ -7,13 +7,13 @@ jobs:
       deploy:
       steps:
 
-      # Checkout shared steps
-      - checkout: 'tfpipeline-shared'
-        displayName: 'Checkout Shared Pipeline Steps'
-        path: 's/pipeline/Shared/'
+        # Checkout shared steps
+        - checkout: 'tfpipeline-shared'
+          displayName: 'Checkout Shared Pipeline Steps'
+          path: 's/pipeline/Shared/'
 
-      # Run common steps
-      - template: ./Steps/common.yml@tfpipeline-shared
+        # Run common steps
+        - template: ./Steps/common.yml@tfpipeline-shared
 
-      # Run Unit steps
-      - template: ./Steps/reapply.yml@tfpipeline-shared
+        # Run Unit steps
+        - template: ./Steps/reapply.yml@tfpipeline-shared
