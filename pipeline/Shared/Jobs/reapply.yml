@@ -5,7 +5,7 @@ jobs:
   strategy:
     runOnce:
       deploy:
-      steps:
+        steps:
 
         # Checkout shared steps
         - checkout: 'tfpipeline-shared'
