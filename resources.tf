@@ -17,9 +17,6 @@ module "directory_services_network_peering" {
   for_each                   = toset(local.resource_locations)
   source                     = "github.com/wesley-trust/tfmodule-network_peering"
   service_environment        = terraform.workspace
-  service_deployment         = "01"
-  service_name               = var.service_name
-  service_location           = each.value
   resource_network_peer      = module.directory_services_virtual_machines[each.value]
   resource_network_peer_role = var.resource_network_peer_role
 }
@@ -56,9 +53,6 @@ module "directory_services_network_peering_bcdr" {
   for_each                   = toset(local.resource_bcdr_locations)
   source                     = "github.com/wesley-trust/tfmodule-network_peering"
   service_environment        = terraform.workspace
-  service_deployment         = "01"
-  service_name               = var.service_name
-  service_location           = each.value
   resource_network_peer      = module.directory_services_virtual_machines_bcdr[each.value]
   resource_network_peer_role = var.resource_network_peer_role
 }
