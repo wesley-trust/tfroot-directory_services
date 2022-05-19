@@ -1,4 +1,4 @@
-/* module "directory_services_virtual_machines" {
+module "directory_services_virtual_machines" {
   for_each                = toset(local.resource_locations)
   source                  = "github.com/wesley-trust/tfmodule-windows_virtual_machine"
   service_environment     = terraform.workspace
@@ -11,7 +11,7 @@
   resource_address_space  = lookup(var.resource_address_space, each.value, null)
   resource_dns_servers    = lookup(var.resource_dns_servers, each.value, null)
   resource_network_role   = var.resource_network_role
-} */
+}
 
 /* module "directory_services_network_peering" {
   for_each                   = toset(local.resource_locations)
@@ -32,7 +32,7 @@
   resource_name                               = local.resource_name
   resource_recovery_services_instance_count   = local.resource_recovery_services_instance_count
   resource_recovery_services_virtual_machines = module.directory_services_virtual_machines[each.value]
-}
+} */
 
 module "directory_services_virtual_machines_bcdr" {
   for_each                = toset(local.resource_bcdr_locations)
@@ -47,7 +47,7 @@ module "directory_services_virtual_machines_bcdr" {
   resource_address_space  = lookup(var.resource_address_space, each.value, null)
   resource_dns_servers    = lookup(var.resource_dns_servers, each.value, null)
   resource_network_role   = var.resource_network_role
-} */
+}
 
 /* module "directory_services_network_peering_bcdr" {
   for_each                   = toset(local.resource_bcdr_locations)
