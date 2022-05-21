@@ -3,7 +3,7 @@ stages:
   pool:
     vmImage: 'ubuntu-latest'
   dependsOn: Plan
-  condition: and(succeeded(), eq(dependencies.Plan.outputs['Evaluate.Variable.ShouldRun'], 'true'))
+  condition: and(succeeded(), eq(dependencies.Plan.outputs['Evaluate.Variable.ShouldRun'], 'true'), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), startswith(variables['Build.SourceBranch'], 'refs/heads/release/')))
   jobs:
 
   # Apply Jobs

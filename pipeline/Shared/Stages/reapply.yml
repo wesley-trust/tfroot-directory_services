@@ -3,7 +3,8 @@ stages:
   pool:
     vmImage: 'ubuntu-latest'
   dependsOn: RePlan
-  condition: and(succeeded('RePlan'), eq(dependencies.RePlan.outputs['ReEvaluate.Variable.ShouldRun'], 'true'))
+ condition: and(succeeded(), eq(dependencies.RePlan.outputs['ReEvaluate.Variable.ShouldRun'], 'true'), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), startswith(variables['Build.SourceBranch'], 'refs/heads/release/')))
+  
   jobs:
   
   # ReApply Jobs
