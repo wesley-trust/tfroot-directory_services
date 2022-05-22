@@ -31,6 +31,9 @@ func TestPlan(t *testing.T) {
 
 		// The path to where the Terraform code is located
 		TerraformDir: rootFolder,
+		
+		// Reconfigure the backend so the production state is not used
+		Reconfigure: true,
 
 		// Variables to pass to the Terraform code using -var options
 		Vars: map[string]interface{}{
