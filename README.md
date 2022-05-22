@@ -2,11 +2,14 @@
 Terraform root configuration for Active Directory Domain Services deployment to Azure, using modules and submodules, with Regula (OPA) Policy as Code scanning in an Azure DevOps CI/CD Pipeline
 ## [CI/CD Pipeline](https://dev.azure.com/wesleytrust/Terraform/_build?definitionId=65)
 Select a stage to view in Azure DevOps. *Note that 'Skipped' stages in the last run, will show as "unknown" by design.*
-### Testing
+| Pipeline |
+| :------: |
+|[![Build Status](https://dev.azure.com/wesleytrust/Terraform/_apis/build/status/DirectoryServices/SVC-CP%3BENV-P%3B%20tfroot-directory_services?repoName=wesley-trust%2Ftfroot-directory_services&branchName=main)](https://dev.azure.com/wesleytrust/Terraform/_build/latest?definitionId=65&repoName=wesley-trust%2Ftfroot-directory_services&branchName=main)|
+### Testing Stages
 | Unit Tests | Integration Tests  |
 | :------: | :---: |
 |[![Build Status](https://dev.azure.com/wesleytrust/Terraform/_apis/build/status/DirectoryServices/SVC-CP%3BENV-P%3B%20tfroot-directory_services?repoName=wesley-trust%2Ftfroot-directory_services&branchName=main&stageName=Unit)](https://dev.azure.com/wesleytrust/Terraform/_build/latest?definitionId=65&repoName=wesley-trust%2Ftfroot-directory_services&branchName=main)|[![Build Status](https://dev.azure.com/wesleytrust/Terraform/_apis/build/status/DirectoryServices/SVC-CP%3BENV-P%3B%20tfroot-directory_services?repoName=wesley-trust%2Ftfroot-directory_services&branchName=main&stageName=Integration)](https://dev.azure.com/wesleytrust/Terraform/_build/latest?definitionId=65&repoName=wesley-trust%2Ftfroot-directory_services&branchName=main)|
-### Deployment
+### Deployment Stages
 | Plan  | Apply | Replan | Reapply |
 | :---: | :---: | :----: | :-----: |
 [![Build Status](https://dev.azure.com/wesleytrust/Terraform/_apis/build/status/DirectoryServices/SVC-CP%3BENV-P%3B%20tfroot-directory_services?repoName=wesley-trust%2Ftfroot-directory_services&branchName=main&stageName=Plan)](https://dev.azure.com/wesleytrust/Terraform/_build/latest?definitionId=65&repoName=wesley-trust%2Ftfroot-directory_services&branchName=main)|[![Build Status](https://dev.azure.com/wesleytrust/Terraform/_apis/build/status/DirectoryServices/SVC-CP%3BENV-P%3B%20tfroot-directory_services?repoName=wesley-trust%2Ftfroot-directory_services&branchName=main&stageName=Apply)](https://dev.azure.com/wesleytrust/Terraform/_build/latest?definitionId=65&repoName=wesley-trust%2Ftfroot-directory_services&branchName=main)|[![Build Status](https://dev.azure.com/wesleytrust/Terraform/_apis/build/status/DirectoryServices/SVC-CP%3BENV-P%3B%20tfroot-directory_services?repoName=wesley-trust%2Ftfroot-directory_services&branchName=main&stageName=RePlan)](https://dev.azure.com/wesleytrust/Terraform/_build/latest?definitionId=65&repoName=wesley-trust%2Ftfroot-directory_services&branchName=main)|[![Build Status](https://dev.azure.com/wesleytrust/Terraform/_apis/build/status/DirectoryServices/SVC-CP%3BENV-P%3B%20tfroot-directory_services?repoName=wesley-trust%2Ftfroot-directory_services&branchName=main&stageName=ReApply)](https://dev.azure.com/wesleytrust/Terraform/_build/latest?definitionId=65&repoName=wesley-trust%2Ftfroot-directory_services&branchName=main)|
