@@ -9,7 +9,7 @@ import (
 	//"github.com/stretchr/testify/assert"
 )
 
-func TestApplyProd(t *testing.T) {
+func TestApplyDefault(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
