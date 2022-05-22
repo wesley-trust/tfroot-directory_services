@@ -8,7 +8,7 @@ import (
 	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
-func TestPlan(t *testing.T) {
+func TestPlanProd(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -25,6 +25,9 @@ func TestPlan(t *testing.T) {
 
 	// Define variables
 	//locations := []string{"UK South"}
+	workspace := "Prod"
+
+	WorkspaceSelectOrNew(t *testing.T, workspace) 
 
 	// Enable retryable error
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
