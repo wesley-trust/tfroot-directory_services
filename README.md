@@ -1,7 +1,7 @@
 # tfroot-directory_services
 Terraform root configuration for Active Directory Domain Services deployment to Azure, using modules and submodules, with Regula (OPA) Policy as Code scanning in an Azure DevOps CI/CD Pipeline
 ## CI/CD Pipeline
-Select a stage to view in Azure DevOps. *Note that 'Skipped' stages will show as "unknown" by design.*
+Select a stage to view in Azure DevOps. *Note that 'Skipped' stages in the last run, will show as "unknown" by design.*
 ### Testing
 | Unit Tests | Integration Tests  |
 | :------: | :---: |
