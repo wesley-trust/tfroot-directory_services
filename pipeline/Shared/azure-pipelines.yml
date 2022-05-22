@@ -20,7 +20,7 @@ stages:
 - template: Stages/integration.yml
 
 # Validate
-- template: Stages/validate.yml
+#- template: Stages/validate.yml
 
 # Plan
 - template: Stages/plan.yml
