@@ -1,5 +1,6 @@
 jobs:
 - job: Evaluate
+  dependsOn: Import
   continueOnError: false
   steps:
   
