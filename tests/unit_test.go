@@ -25,9 +25,6 @@ func TestPlanProd(t *testing.T) {
 
 	// Define variables
 	//locations := []string{"UK South"}
-	workspace := "Prod"
-
-	WorkspaceSelectOrNew(t *testing.T, workspace) 
 
 	// Enable retryable error
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{

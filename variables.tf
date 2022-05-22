@@ -20,13 +20,17 @@ variable "service_location" {
     BCDR = [
       "North Central US"
     ]
+
+    default = [
+      "UK South"
+    ]
   }
 }
 
 variable "service_deployment" {
   description = "Desired deployment identifier of the service collection of provisioned resources"
   type        = string
-  default = "01"
+  default     = "01"
 }
 
 variable "service_recovery_services_location" {
@@ -42,6 +46,10 @@ variable "service_recovery_services_location" {
     ]
 
     BCDR = [
+    ]
+
+    default = [
+      "UK South"
     ]
   }
 }
@@ -69,6 +77,11 @@ variable "resource_instance_count" {
     BCDR = {
       "DirectoryServices" = 1
     }
+
+    default = {
+      "DirectoryServices" = 2
+    },
+
   }
 }
 
@@ -87,6 +100,10 @@ variable "resource_recovery_services_instance_count" {
     BCDR = {
       "DirectoryServices" = 0
     }
+
+    default = {
+      "DirectoryServices" = 1
+    },
   }
 }
 
@@ -103,6 +120,10 @@ variable "resource_instance_size" {
     },
 
     BCDR = {
+      "DirectoryServices" = "Standard_B1s"
+    }
+
+    default = {
       "DirectoryServices" = "Standard_B1s"
     }
   }
