@@ -1,6 +1,7 @@
 package test
 
 import (
+	"os"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/random"
@@ -12,6 +13,10 @@ func TestPlan(t *testing.T) {
 
 	// Root folder where Terraform files should be (relative to the test folder)
 	rootFolder := "../"
+
+	// Remove Backend Terraform definition so local state is used
+	backendFile := "../backend.tf"
+	os.Remove(backendFile)
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
