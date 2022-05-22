@@ -6,5 +6,11 @@ stages:
   dependsOn: Validate
   jobs:
   
+  # Validate Jobs
+  - template: ../Jobs/validate.yml
+
+  # Workspace Job
+  - template: ../Jobs/workspace.yml
+
   # Plan Jobs
   - template: ../Jobs/plan.yml
