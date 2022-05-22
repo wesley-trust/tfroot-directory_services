@@ -1,6 +1,7 @@
 jobs:
 - job: Evaluate
-  dependsOn: Import
+  dependsOn: New
+  condition: or(eq(dependencies.Import.result,'Succeeded'),eq(dependencies.Import.result,'Skipped'))
   continueOnError: false
   steps:
   
