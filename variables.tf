@@ -13,15 +13,23 @@ variable "service_location" {
       "UK South"
     ]
 
+    Prod_BCDR = [
+      "North Central US"
+    ]
+
     Dev = [
       "UK South"
     ]
 
-    BCDR = [
+    Dev_BCDR = [
       "North Central US"
     ]
 
     default = [
+      "UK South"
+    ]
+
+    default_BCDR = [
       "UK South"
     ]
   }
@@ -41,14 +49,23 @@ variable "service_recovery_services_location" {
       "UK South"
     ]
 
+    Prod_BCDR = [
+      "North Central US"
+    ]
+
     Dev = [
       "UK South"
     ]
 
-    BCDR = [
+    Dev_BCDR = [
+      "North Central US"
     ]
 
     default = [
+      "UK South"
+    ]
+
+    default_BCDR = [
       "UK South"
     ]
   }
@@ -70,11 +87,15 @@ variable "resource_instance_count" {
       "DirectoryServices" = 2
     },
 
+    Prod_BCDR = {
+      "DirectoryServices" = 1
+    }
+
     Dev = {
       "DirectoryServices" = 1
     },
 
-    BCDR = {
+    Dev_BCDR = {
       "DirectoryServices" = 1
     }
 
@@ -82,6 +103,9 @@ variable "resource_instance_count" {
       "DirectoryServices" = 2
     },
 
+    default_BCDR = {
+      "DirectoryServices" = 1
+    },
   }
 }
 
@@ -93,16 +117,24 @@ variable "resource_recovery_services_instance_count" {
       "DirectoryServices" = 1
     },
 
+    Prod_BCDR = {
+      "DirectoryServices" = 0
+    }
+
     Dev = {
       "DirectoryServices" = 1
     },
 
-    BCDR = {
+    Dev_BCDR = {
       "DirectoryServices" = 0
     }
 
     default = {
       "DirectoryServices" = 1
+    },
+
+    default_BCDR = {
+      "DirectoryServices" = 0
     },
   }
 }
@@ -115,15 +147,23 @@ variable "resource_instance_size" {
       "DirectoryServices" = "Standard_B1s"
     },
 
+    Prod_BCDR = {
+      "DirectoryServices" = "Standard_B1s"
+    }
+
     Dev = {
       "DirectoryServices" = "Standard_B1s"
     },
 
-    BCDR = {
+    Dev_BCDR = {
       "DirectoryServices" = "Standard_B1s"
     }
 
     default = {
+      "DirectoryServices" = "Standard_B1s"
+    }
+
+    default_BCDR = {
       "DirectoryServices" = "Standard_B1s"
     }
   }

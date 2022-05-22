@@ -38,7 +38,7 @@ module "directory_services_virtual_machines_bcdr" {
   for_each                = toset(local.resource_bcdr_locations)
   source                  = "github.com/wesley-trust/tfmodule-windows_virtual_machine"
   service_environment     = terraform.workspace
-  service_deployment      = "01"
+  service_deployment      = var.service_deployment
   service_name            = var.service_name
   service_location        = each.value
   resource_name           = local.resource_name
