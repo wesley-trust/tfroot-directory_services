@@ -1,6 +1,6 @@
 jobs:
 - job: Import
-  displayName: 'Validate workspace'
+  displayName: 'Validate Workspace'
   continueOnError: false
   steps:
   

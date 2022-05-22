@@ -1,5 +1,6 @@
 jobs:
 - job: Evaluate
+  displayName: 'Create Plan'
   dependsOn: New
   condition: or(eq(dependencies.Import.result,'Succeeded'),eq(dependencies.Import.result,'Skipped'))
   continueOnError: false
