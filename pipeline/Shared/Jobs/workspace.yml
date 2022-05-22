@@ -1,5 +1,6 @@
 jobs:
 - job: New
+  displayName: 'Create workspace'
   dependsOn: Import
   condition: eq(dependencies.Import.result,'SucceededWithIssues')
   steps:

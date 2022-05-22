@@ -1,5 +1,6 @@
 jobs:
 - job: Import
+  displayName: 'Validate workspace'
   continueOnError: false
   steps:
   
