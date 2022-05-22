@@ -23,6 +23,12 @@ variable "service_location" {
   }
 }
 
+variable "service_deployment" {
+  description = "Desired deployment identifier of the service collection of provisioned resources"
+  type        = string
+  default = "01"
+}
+
 variable "service_recovery_services_location" {
   description = "The production resource locations to backup"
   type        = map(any)
