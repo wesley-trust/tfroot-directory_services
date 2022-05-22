@@ -30,7 +30,7 @@ variable "service_location" {
     ]
 
     default_BCDR = [
-      "UK South"
+      "North Central US"
     ]
   }
 }
@@ -66,7 +66,7 @@ variable "service_recovery_services_location" {
     ]
 
     default_BCDR = [
-      "UK South"
+      "North Central US"
     ]
   }
 }
