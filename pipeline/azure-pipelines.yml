@@ -4,12 +4,18 @@ trigger:
   branches:
     include:
     - '*'
+  paths:
+    exclude:
+    - README.md
 
 # Trigger builds on PRs to branch
 pr:
   branches:
     include:
     - '*'
+  paths:
+    exclude:
+    - README.md
 
 # Execute on a schedule (measure drift from desired state)
 schedules:
