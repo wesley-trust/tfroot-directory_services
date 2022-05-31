@@ -14,14 +14,14 @@ module "directory_services" {
   operating_system_platform = var.operating_system_platform
 }
 
-/* module "directory_services_network_peering" {
+module "directory_services_network_peering" {
   for_each                   = toset(local.resource_locations)
   source                     = "github.com/wesley-trust/tfmodule-network_peering"
   service_environment        = terraform.workspace
   resource_network_peer      = module.directory_services_virtual_machines[each.value].network_name
   resource_group_peer        = module.directory_services_virtual_machines[each.value].resource_group_name
   resource_network_peer_role = var.resource_network_peer_role
-} */
+}
 
 /* module "directory_services_recovery_services" {
   depends_on                                  = [module.directory_services_virtual_machines]
@@ -52,11 +52,11 @@ module "directory_services_bcdr" {
   operating_system_platform = var.operating_system_platform
 }
 
-/* module "directory_services_network_peering_bcdr" {
+module "directory_services_network_peering_bcdr" {
   for_each                   = toset(local.resource_bcdr_locations)
   source                     = "github.com/wesley-trust/tfmodule-network_peering"
   service_environment        = terraform.workspace
   resource_network_peer      = module.directory_services_virtual_machines_bcdr[each.value].network_name
   resource_group_peer        = module.directory_services_virtual_machines_bcdr[each.value].resource_group_name
   resource_network_peer_role = var.resource_network_peer_role
-} */
+}
