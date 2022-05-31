@@ -79,6 +79,12 @@ variable "resource_name" {
   }
 }
 
+variable "operating_system_platform" {
+  description = "Desired OS for the provisioned resources"
+  type        = string
+  default     = "Windows"
+}
+
 variable "resource_instance_count" {
   description = "Desired number of the provisioned resources for each service environment"
   type        = map(any)
