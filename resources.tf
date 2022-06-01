@@ -1,4 +1,4 @@
-/* module "directory_services" {
+module "directory_services" {
   for_each                  = toset(local.resource_locations)
   source                    = "github.com/wesley-trust/tfmodule-compute"
   service_environment       = terraform.workspace
@@ -21,9 +21,9 @@ module "directory_services_network_peering" {
   resource_network_peer      = module.directory_services[each.value].network_name
   resource_group_peer        = module.directory_services[each.value].resource_group_name
   resource_network_peer_role = var.resource_network_peer_role
-} */
+}
 
-/* module "directory_services_recovery_services" {
+module "directory_services_recovery_services" {
   depends_on                                  = [module.directory_services]
   for_each                                    = toset(local.resource_recovery_services_locations)
   source                                      = "github.com/wesley-trust/tfmodule-recovery_services"
@@ -34,9 +34,9 @@ module "directory_services_network_peering" {
   resource_name                               = local.resource_name
   resource_recovery_services_instance_count   = local.resource_recovery_services_instance_count
   resource_recovery_services_virtual_machines = module.directory_services[each.value]
-} */
+}
 
-/* module "directory_services_bcdr" {
+module "directory_services_bcdr" {
   for_each                  = toset(local.resource_bcdr_locations)
   source                    = "github.com/wesley-trust/tfmodule-compute"
   service_environment       = terraform.workspace
@@ -59,4 +59,4 @@ module "directory_services_network_peering_bcdr" {
   resource_network_peer      = module.directory_services_bcdr[each.value].network_name
   resource_group_peer        = module.directory_services_bcdr[each.value].resource_group_name
   resource_network_peer_role = var.resource_network_peer_role
-} */
+}
