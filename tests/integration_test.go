@@ -43,13 +43,16 @@ func TestApplyDefault(t *testing.T) {
 	})
 
 	// At the end of the test, run `terraform destroy` to clean up any resources that were created
-	defer terraform.Destroy(t, terraformOptions)
+	defer terraform.DestroyE(t, terraformOptions)
 
 	// At the end of the test, run `terraform destroy` again, in case failures leave orphaned resources
 	defer terraform.Destroy(t, terraformOptions)
 
 	// Run `terraform init` and `terraform apply`. Fail the test if there are any errors.
 	terraform.InitAndApply(t, terraformOptions)
+
+	// Run `terraform apply` again, due to provider errors, such as soft delete not being disabled, Fail the test if there are any errors.
+	terraform.Apply(t, terraformOptions)
 
 	// Run `terraform output` to get the values of output variables
 	//output := terraform.Output(t, terraformOptions, "resourceGroupName")
