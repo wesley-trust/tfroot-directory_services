@@ -235,3 +235,9 @@ variable "resource_shutdown_enabled" {
   type        = bool
   default     = true
 }
+
+variable "resource_automatic_backups_enabled" {
+  description = "Whether to automatically backup specified instances"
+  type        = bool
+  default     = false
+}
