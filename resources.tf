@@ -1,6 +1,6 @@
 module "directory_services" {
   for_each                  = toset(local.resource_locations)
-  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1-compute"
+  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.1-compute"
   service_environment       = terraform.workspace
   service_deployment        = var.service_deployment
   service_name              = var.service_name
@@ -11,6 +11,7 @@ module "directory_services" {
   resource_address_space    = lookup(var.resource_address_space, each.value, null)
   resource_dns_servers      = lookup(var.resource_dns_servers, each.value, null)
   resource_network_role     = var.resource_network_role
+  resource_shutdown_enabled = var.resource_shutdown_enabled
   operating_system_platform = var.operating_system_platform
 }
 
@@ -39,7 +40,7 @@ module "directory_services_network_peering" {
 
 module "directory_services_bcdr" {
   for_each                  = toset(local.resource_bcdr_locations)
-  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1-compute"
+  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.1-compute"
   service_environment       = terraform.workspace
   service_deployment        = var.service_deployment
   service_name              = var.service_name
@@ -50,6 +51,7 @@ module "directory_services_bcdr" {
   resource_address_space    = lookup(var.resource_address_space, each.value, null)
   resource_dns_servers      = lookup(var.resource_dns_servers, each.value, null)
   resource_network_role     = var.resource_network_role
+  resource_shutdown_enabled = var.resource_shutdown_enabled
   operating_system_platform = var.operating_system_platform
 }
 
