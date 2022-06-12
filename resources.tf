@@ -27,7 +27,7 @@ module "directory_services_network_peering" {
 module "directory_services_recovery_services" {
   depends_on                                  = [module.directory_services]
   for_each                                    = toset(local.resource_recovery_services_locations)
-  source                                      = "github.com/wesley-trust/tfmodule-recovery_services?ref=v0.10-beta-recovery_services"
+  source                                      = "github.com/wesley-trust/tfmodule-recovery_services?ref=v0.11-beta-recovery_services"
   service_environment                         = terraform.workspace
   service_deployment                          = var.service_deployment
   service_name                                = "${var.service_name}-RSV"
