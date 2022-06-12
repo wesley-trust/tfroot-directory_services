@@ -1,6 +1,6 @@
 module "directory_services" {
   for_each                  = toset(local.resource_locations)
-  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1-compute"
+  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.1-compute"
   service_environment       = terraform.workspace
   service_deployment        = var.service_deployment
   service_name              = var.service_name
@@ -11,6 +11,7 @@ module "directory_services" {
   resource_address_space    = lookup(var.resource_address_space, each.value, null)
   resource_dns_servers      = lookup(var.resource_dns_servers, each.value, null)
   resource_network_role     = var.resource_network_role
+  resource_shutdown_enabled = var.resource_shutdown_enabled
   operating_system_platform = var.operating_system_platform
 }
 
@@ -23,10 +24,10 @@ module "directory_services_network_peering" {
   resource_network_peer_role = var.resource_network_peer_role
 }
 
-/* module "directory_services_recovery_services" {
+module "directory_services_recovery_services" {
   depends_on                                  = [module.directory_services]
   for_each                                    = toset(local.resource_recovery_services_locations)
-  source                                      = "github.com/wesley-trust/tfmodule-recovery_services?ref=v0.10-beta-recovery_services"
+  source                                      = "github.com/wesley-trust/tfmodule-recovery_services?ref=v0.11-beta-recovery_services"
   service_environment                         = terraform.workspace
   service_deployment                          = var.service_deployment
   service_name                                = "${var.service_name}-RSV"
@@ -34,12 +35,13 @@ module "directory_services_network_peering" {
   resource_name                               = local.resource_name
   resource_recovery_services_instance_count   = local.resource_recovery_services_instance_count
   resource_recovery_services_virtual_machines = module.directory_services[each.value]
+  resource_automatic_backups_enabled          = var.resource_automatic_backups_enabled
   resource_delete_protection_enabled          = var.resource_delete_protection_enabled
-} */
+}
 
 module "directory_services_bcdr" {
   for_each                  = toset(local.resource_bcdr_locations)
-  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1-compute"
+  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.1-compute"
   service_environment       = terraform.workspace
   service_deployment        = var.service_deployment
   service_name              = var.service_name
@@ -50,6 +52,7 @@ module "directory_services_bcdr" {
   resource_address_space    = lookup(var.resource_address_space, each.value, null)
   resource_dns_servers      = lookup(var.resource_dns_servers, each.value, null)
   resource_network_role     = var.resource_network_role
+  resource_shutdown_enabled = var.resource_shutdown_enabled
   operating_system_platform = var.operating_system_platform
 }
 
