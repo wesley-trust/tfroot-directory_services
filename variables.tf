@@ -241,3 +241,9 @@ variable "resource_automatic_backups_enabled" {
   type        = bool
   default     = false
 }
+
+variable "resource_network_peer_deployment" {
+  description = "Deployment identifier for the resource network to peer"
+  type        = string
+  default     = "01"
+}

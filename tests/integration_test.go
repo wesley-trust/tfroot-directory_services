@@ -39,6 +39,7 @@ func TestApplyDefault(t *testing.T) {
 		// Variables to pass to the Terraform code using -var options
 		Vars: map[string]interface{}{
 			"service_deployment":                 serviceDeployment,
+			"resource_network_peer_deployment":   serviceDeployment,
 			"resource_delete_protection_enabled": false,
 		},
 	})
