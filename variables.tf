@@ -90,7 +90,7 @@ variable "resource_instance_count" {
   type        = map(any)
   default = {
     Prod = {
-      "DirectoryServices" = 1
+      "DirectoryServices" = 2
     },
 
     Prod_BCDR = {
