@@ -11,7 +11,7 @@ blast_radius := 100
 
 # weights assigned for each operation on each resource-type
 weights := {
-# Resource Group
+	# Resource Group
 	"azurerm_resource_group": {"delete": 200, "create": 100, "modify": 1},
 	# Compute
 	## Virtual Machine
