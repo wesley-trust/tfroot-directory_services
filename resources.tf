@@ -1,4 +1,4 @@
-module "directory_services" {
+/* module "directory_services" {
   for_each                  = toset(local.resource_locations)
   source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.2-compute"
   service_environment       = terraform.workspace
@@ -65,4 +65,4 @@ module "directory_services_network_peering_bcdr" {
   resource_group_peer              = module.directory_services_bcdr[each.value].resource_group_name
   resource_network_peer_deployment = var.resource_network_peer_deployment
   resource_network_peer_role       = var.resource_network_peer_role
-}
+} */
