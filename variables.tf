@@ -79,6 +79,18 @@ variable "resource_name" {
   }
 }
 
+variable "resource_image" {
+  description = "Desired image for the provisioned resources"
+  type        = string
+  default     = "windows_server_2022-domain_services"
+}
+
+variable "resource_image_group" {
+  description = "Resource group name of image for the provisioned resources"
+  type        = string
+  default     = "ImageServices-domain_services-Prod-UKS-01-rg"
+}
+
 variable "operating_system_platform" {
   description = "Desired OS for the provisioned resources"
   type        = string
