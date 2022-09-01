@@ -1,11 +1,13 @@
-/* module "directory_services" {
+module "directory_services" {
   for_each                  = toset(local.resource_locations)
-  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.2-compute"
+  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.3-compute"
   service_environment       = terraform.workspace
   service_deployment        = var.service_deployment
   service_name              = var.service_name
   service_location          = each.value
   resource_name             = local.resource_name
+  resource_image            = var.resource_image
+  resource_image_group      = var.resource_image_group
   resource_instance_count   = local.resource_instance_count
   resource_instance_size    = local.resource_instance_size
   resource_address_space    = lookup(var.resource_address_space, each.value, null)
@@ -14,7 +16,7 @@
   resource_shutdown_enabled = var.resource_shutdown_enabled
   operating_system_platform = var.operating_system_platform
 }
-
+/* 
 module "directory_services_network_peering" {
   for_each                         = toset(local.resource_locations)
   source                           = "github.com/wesley-trust/tfmodule-network_peering?ref=v1.1-network_peering"
@@ -42,12 +44,14 @@ module "directory_services_recovery_services" {
 
 module "directory_services_bcdr" {
   for_each                  = toset(local.resource_bcdr_locations)
-  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.2-compute"
+  source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.3-compute"
   service_environment       = terraform.workspace
   service_deployment        = var.service_deployment
   service_name              = var.service_name
   service_location          = each.value
   resource_name             = local.resource_name
+  resource_image            = var.resource_image
+  resource_image_group      = var.resource_image_group
   resource_instance_count   = local.resource_bcdr_instance_count
   resource_instance_size    = local.resource_bcdr_instance_size
   resource_address_space    = lookup(var.resource_address_space, each.value, null)
@@ -65,4 +69,5 @@ module "directory_services_network_peering_bcdr" {
   resource_group_peer              = module.directory_services_bcdr[each.value].resource_group_name
   resource_network_peer_deployment = var.resource_network_peer_deployment
   resource_network_peer_role       = var.resource_network_peer_role
-} */
+}
+ */
