@@ -1,4 +1,4 @@
-module "directory_services" {
+/* module "directory_services" {
   for_each                  = toset(local.resource_locations)
   source                    = "github.com/wesley-trust/tfmodule-compute?ref=v1.3-compute"
   service_environment       = terraform.workspace
@@ -16,7 +16,7 @@ module "directory_services" {
   resource_shutdown_enabled = var.resource_shutdown_enabled
   operating_system_platform = var.operating_system_platform
 }
-/* 
+
 module "directory_services_network_peering" {
   for_each                         = toset(local.resource_locations)
   source                           = "github.com/wesley-trust/tfmodule-network_peering?ref=v1.1-network_peering"
